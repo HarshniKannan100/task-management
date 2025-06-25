@@ -1,0 +1,26 @@
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content:center;
+}
+.form-container{
+    background-color: bisque;
+    color:violet;
+    padding: 20px;
+    gap:10px;
+    margin:40px 20% 40px 20%;
+}
+
+.title,.description, .date, .add{
+    color:violet;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height:40px;
+}
+ .description{
+    height:50px;
+ }

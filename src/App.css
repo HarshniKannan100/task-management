@@ -1,0 +1,12 @@
+nav {
+  text-decoration: none;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+nav:hover {
+  text-decoration: underline;
+}
+body{
+    background-color: #F8F5E8;
+}
