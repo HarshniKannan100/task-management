@@ -12,7 +12,7 @@ const AddTaskForm = ({ onTaskAdded }) => {
     e.preventDefault();
 
     try {
-      await axios.post("https://localhost:44332/api/Tasks", {
+      await axios.post("https://taskmanager-backend-fh46.onrender.com/tasks", {
         title,
         description,
         deadline,

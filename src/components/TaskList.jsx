@@ -5,9 +5,9 @@ import axios from "axios";
 const TaskList = ({tasks,fetchTasks }) =>{
     const handleToggle = async (task) => {
     try {
-      await axios.put(`https://localhost:44332/api/Tasks/${task.id}`, {
+      await axios.put(`https://taskmanager-backend-fh46.onrender.com/tasks/${task.id}`, {
         ...task, // spread the existing task values
-        isCompleted: !task.isCompleted, // toggle this
+        completed: !task.completed, // toggle this
       });
       fetchTasks(); // Refresh the task list
     } catch (err) {
@@ -17,7 +17,7 @@ const TaskList = ({tasks,fetchTasks }) =>{
 
   const handleDelete = async (id) => {
     try{
-        await axios.delete(`https://localhost:44332/api/Tasks/${id}`);
+        await axios.delete(`https://taskmanager-backend-fh46.onrender.com/tasks/${id}`);
         fetchTasks();
     }catch(error){
         console.log("Error deleting task ",error);
@@ -47,9 +47,9 @@ const TaskList = ({tasks,fetchTasks }) =>{
                   {task.deadline ? new Date(task.deadline).toLocaleDateString() : "—"}
                 </td>
                 <td style={styles.td}>
-                  {task.isCompleted ? "✅" : "❌"}
-                <button onClick={() => handleToggle(task)}> {task.isCompleted ? "Undo" : "Mark Done"}</button></td>
-                <td><button onClick={() => handleDelete(task.id)}>Delete</button></td>
+                  {task.completed ? "✅" : "❌"}
+                <button class="mark" onClick={() => handleToggle(task)}> {task.completed ? "Undo" : "Mark Done"}</button></td>
+                <td><button class="del" onClick={() => handleDelete(task.id)}>Delete</button></td>
                 </tr>
                 ))}
                 </tbody>

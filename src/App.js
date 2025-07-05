@@ -9,7 +9,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
-    const res = await axios.get("https://localhost:44332/api/Tasks");
+    const res = await axios.get("https://taskmanager-backend-fh46.onrender.com/tasks");
     setTasks(res.data);
   };
 
